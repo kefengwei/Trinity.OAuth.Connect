@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44456399-D866-45E7-A0FF-2B1CF8735D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trinity.OAuth.Connect.QQ", "src\Trinity.OAuth.Connect.QQ\Trinity.OAuth.Connect.QQ.csproj", "{DA79F40F-FA3F-421E-B657-246A1A05EBB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trinity.OAuth.Connect.Wexin", "src\Trinity.OAuth.Connect.Wexin\Trinity.OAuth.Connect.Wexin.csproj", "{FEAE0239-79D9-4892-8F55-3D31F3FD7259}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA79F40F-FA3F-421E-B657-246A1A05EBB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA79F40F-FA3F-421E-B657-246A1A05EBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA79F40F-FA3F-421E-B657-246A1A05EBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA79F40F-FA3F-421E-B657-246A1A05EBB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEAE0239-79D9-4892-8F55-3D31F3FD7259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAE0239-79D9-4892-8F55-3D31F3FD7259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAE0239-79D9-4892-8F55-3D31F3FD7259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAE0239-79D9-4892-8F55-3D31F3FD7259}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA79F40F-FA3F-421E-B657-246A1A05EBB2} = {44456399-D866-45E7-A0FF-2B1CF8735D77}
+		{FEAE0239-79D9-4892-8F55-3D31F3FD7259} = {44456399-D866-45E7-A0FF-2B1CF8735D77}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B79CEDF3-0E22-4181-B746-F4BD0F68A9CC}
+	EndGlobalSection
+EndGlobal
