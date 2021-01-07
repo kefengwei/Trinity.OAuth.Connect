@@ -10,6 +10,8 @@ using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.IO;
+using System.Dynamic;
 
 namespace Microsoft.AspNetCore.Authentication.QQ
 {
@@ -47,10 +49,10 @@ namespace Microsoft.AspNetCore.Authentication.QQ
             {
                 throw new HttpRequestException($"未能检索QQ Connect的用户信息(返回状态码:{userInformationResponse.StatusCode})，请检查参数是否正确。");
             }
-
-            var payload = JsonDocument.Parse(await userInformationResponse.Content.ReadAsStringAsync());
-            //identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, openId, ClaimValueTypes.String, Options.ClaimsIssuer));
-            payload.Add("openid", openId);
+            var exsitPayload = await userInformationResponse.Content.ReadAsStringAsync();
+            var payloadDic = JsonSerializer.Deserialize<Dictionary<string, object>>(exsitPayload);
+            payloadDic.Add("openid", openId);
+            var payload = JsonDocument.Parse(JsonSerializer.Serialize(payloadDic)).RootElement;            
             var context = new OAuthCreatingTicketContext(new ClaimsPrincipal(identity), properties, Context, Scheme, Options, Backchannel, tokens, payload);
             context.RunClaimActions();
             await Events.CreatingTicket(context);

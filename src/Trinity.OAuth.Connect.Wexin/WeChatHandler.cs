@@ -232,14 +232,8 @@ namespace Trinity.OAuth.Connect.Wexin
             var openId = GetOpenId(tokens.Response);
             var unionId = GetUnionId(tokens.Response);
             // 构造用户信息JsonElement
-            using var stream = new MemoryStream();
-            using var utf8Writer = new Utf8JsonWriter(stream);
-            utf8Writer.WriteStartObject();
-            utf8Writer.WriteString("openid",openId);
-            utf8Writer.WriteEndObject();
-            await utf8Writer.FlushAsync();
-            
-            var userInfo = JsonDocument.Parse(stream.ToArray());
+            var payloadDic = new Dictionary<string, object>() { ["openid"] = openId };
+            var userInfo = JsonDocument.Parse(JsonSerializer.Serialize(payloadDic));
 
             //微信获取用户信息是需要开通权限的，没有开通权限的只能用openId来标示用户
             if (!string.IsNullOrEmpty(unionId))
