@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Authentication;
 
 namespace Trinity.OAuth.Connect.Wexin
 {
-    internal class WeChatHandler : OAuthHandler<WeChatOptions>
+    public class WeChatHandler : OAuthHandler<WeChatOptions>
     {
         private readonly ISecureDataFormat<AuthenticationProperties> _secureDataFormat;
 

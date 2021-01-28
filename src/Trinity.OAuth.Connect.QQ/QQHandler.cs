@@ -15,7 +15,7 @@ using System.Dynamic;
 
 namespace Microsoft.AspNetCore.Authentication.QQ
 {
-    internal class QQHandler : OAuthHandler<QQOptions>
+    public class QQHandler : OAuthHandler<QQOptions>
     {
         public QQHandler(IOptionsMonitor<QQOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
