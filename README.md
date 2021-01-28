@@ -1,5 +1,5 @@
 ﻿# Trinity.OAuth.Connect
-..net 5.0 QQ登录,微信登录
+.net 5.0 QQ登录,微信登录
 基于[QQConnect](https://github.com/china-live/QQConnect)的5.0适配.
 
 
